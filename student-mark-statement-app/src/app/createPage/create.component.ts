@@ -9,5 +9,6 @@ export class CreateStudent {
     constructor() {
         console.log("create constructor calling");
     }
+    sName: string = "";
 
 }
