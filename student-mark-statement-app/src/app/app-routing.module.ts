@@ -8,12 +8,14 @@ import { CommonModule } from '@angular/common';
 
 
 const routes: Routes = [{ path: 'create', component: CreateStudent },
-{ path: 'show-all', component: ShowAll },
+{ path: 'show-all/:id', component: ShowAll },
 { path: '', redirectTo: '/create', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), FormsModule, CommonModule],
+  imports: [RouterModule.forRoot(routes , {
+    onSameUrlNavigation: 'reload'
+  }), FormsModule, CommonModule],
   exports: [RouterModule],
   declarations: [CreateStudent, ShowAll]
 })
